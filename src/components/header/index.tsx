@@ -8,6 +8,8 @@ import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import authSlice from '../../store/authSlice';
 import {logout} from '@/api/user'
+import CatBreadCrumb from "@/components/breadCrumb";
+
 
 const items: MenuProps["items"] = [
   {
@@ -49,10 +51,11 @@ function CatHeader() {
         className="flex f-a-center f-j-between"
         style={{ paddingRight: "16px" }}
       >
-        <div>
+        <div className="flex f-a-center">
           <Button type="link" onClick={toggleCollapsed}>
             {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
           </Button>
+          <CatBreadCrumb />
         </div>
         <Dropdown menu={{ items, onClick }}>
           <a onClick={(e) => e.preventDefault()}>

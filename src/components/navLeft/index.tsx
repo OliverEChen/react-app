@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useLocation } from "react-router-dom";
 import icons from "./icons";
 
-interface MenuItem {
+export interface MenuItem {
   key: string;
   icon?: React.ReactNode;
   label: string;
@@ -44,25 +44,26 @@ function NavLeft() {
     navigate(e.key);
   };
   return (
-    <>
+    <div style={{ height: "100vh" }}>
       <div
         className="c-fff flex f-a-center f-j-center"
         style={{ height: "64px" }}
       >
         <h1>React</h1>
       </div>
-
-      <Menu
-        theme="dark"
-        mode="inline"
-        defaultOpenKeys={[defaultSelectedKeys]}
-        defaultSelectedKeys={[defaultSelectedKeys]}
-        selectedKeys={[location.pathname]}
-        items={menuData}
-        inlineCollapsed={collapsed}
-        onClick={handleClick}
-      />
-    </>
+      <div style={{ height: "calc(100vh - 64px)", overflowY: "auto" }}>
+        <Menu
+          theme="dark"
+          mode="inline"
+          defaultOpenKeys={[defaultSelectedKeys]}
+          defaultSelectedKeys={[defaultSelectedKeys]}
+          selectedKeys={[location.pathname]}
+          items={menuData}
+          inlineCollapsed={collapsed}
+          onClick={handleClick}
+        />
+      </div>
+    </div>
   );
 }
 export default NavLeft;

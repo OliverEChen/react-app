@@ -1561,6 +1561,10 @@
   border: #f00 solid 1px;
 }
 
+.float-l {float: left;}
+.float-r {float: right;}
+.clear::after {content: ''; display: block; clear: both;height: 0;}
+
 /* v-html 内部样式 */
 .vHtml {
   img {

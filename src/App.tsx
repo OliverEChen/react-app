@@ -1,4 +1,3 @@
-import './App.css';
 import { RouterProvider } from 'react-router-dom';
 import { Spin } from 'antd';
 import {routes} from './router';
