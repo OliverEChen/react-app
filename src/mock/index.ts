@@ -466,7 +466,7 @@ Mock.Random.extend({
   })
 
 //租户列表的接口
-Mock.mock("https://www.demo.com/userList","post",(options:any)=>{
+Mock.mock("https://www.dev.com/userList","post",(options:any)=>{
     const {pageSize,page,companyName,contact,phone}=JSON.parse(options.body)
     console.log("租户列表接收到参数",page,pageSize,companyName,contact,phone)
     return {
@@ -478,7 +478,7 @@ Mock.mock("https://www.demo.com/userList","post",(options:any)=>{
                     "id":"@string('number',6)",//随机生成一个六位数字id
                     "name":"@cname",//随机生成一个人名
                     "status|1":["1","2","3"],
-                    "tel":'@phone',
+                    "phone":'@phone',
                     "business|1": ['制造业','互联网','新媒体','美业','新能源','物流','电商'],
                     "email":"@email",
                     "creditCode":"@string('number',18)",
@@ -487,7 +487,7 @@ Mock.mock("https://www.demo.com/userList","post",(options:any)=>{
                     "legalPerson":"@cname",
                 },
             ],
-            total:78
+            total:100
         })
     }
 })
@@ -604,7 +604,6 @@ Mock.mock('https://www.demo.com/billList', 'post', (options: any) => {
 //账号管理
 Mock.mock('https://www.demo.com/accountList', 'post', (options: any) => {
 //  const {page,pageSize,companyName,contact,phone}=JSON.parse(options.body);
-  console.log("后端账号管理接到参数",options)
   return {
     code: 200,
     message: "成功",

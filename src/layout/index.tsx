@@ -30,8 +30,8 @@ function Home() {
           >
             <div style={{
               margin: "24px 16px",
-              padding: 24,
-              background: colorBgContainer,
+              // padding: 24,
+              // background: colorBgContainer,
               borderRadius: borderRadiusLG,
             }}>
             <Outlet></Outlet>
