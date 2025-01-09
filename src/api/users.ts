@@ -9,3 +9,9 @@ interface SearchUser {
 export function postUserList(data: SearchUser){
     return post('/userList', data)
 }
+export function postDeleteUser(id: number){
+    return post('/deleteUser', {id})
+}
+export function batchDeleteUser(ids: string){
+    return post('/deleteUser', {ids})
+}

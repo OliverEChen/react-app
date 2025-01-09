@@ -11,3 +11,7 @@ export interface DataType {
   organizationCode: string;
   legalPerson: string;
 }
+export interface statusMapType {
+    text: string;
+    color: string;
+}
