@@ -124,7 +124,9 @@ const menuList = [
             {
                 "icon": "FrownOutlined",
                 "label": "合同详情",
-                "key": "/finance/surrender",
+                "key": "/finance/contract-detail",
+                hidden:true
+
             },
             {
                 "icon": "FileTextOutlined",
@@ -549,7 +551,7 @@ function generateRooms() {
   });
 
   //合同管理
-  Mock.mock('https://www.demo.com/contractList', 'post', (options: any) => {
+  Mock.mock('https://www.dev.com/contractList', 'post', (options: any) => {
   const {page,pageSize}=JSON.parse(options.body);
   console.log("后端合同管理接到参数",JSON.parse(options.body))
   return {
@@ -557,14 +559,15 @@ function generateRooms() {
     message: "成功",
     data: Mock.mock({
       [`list|${pageSize}`]: [{
+        "id":"@string('number',6)",//随机生成一个六位数字id
         'contractNo':'@string("number", 6)',
-        'type|1': ['租赁合同','自定义合同','购买合同'],
-        'name|1': ["房屋租赁合同通用模版","车位租赁合同通用模版","商业房产买卖合同"],  
+        'contractType|1': ['租赁合同','自定义合同','购买合同'],
+        'contractName|1': ["房屋租赁合同通用模版","车位租赁合同通用模版","商业房产买卖合同"],  
         "startDate|1":['2023-01-01','2023-03-05','2023-04-01'],
         "endDate|1":['2024-01-01','2024-03-05','2024-04-01'],
-        'jia|1': ['万物科技有限公司','大鱼网络科技','六六信息技术有限公司'],  
-        'yi': '天明物业有限公司', 
-        'status|1': ["1","2","3"],  
+        'partyA|1': ['万物科技有限公司','大鱼网络科技','六六信息技术有限公司'],  
+        'partyB': '天明物业有限公司', 
+        'status|1': [1,2,3],  
       }],
       "total": 54
     })

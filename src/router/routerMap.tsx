@@ -8,7 +8,7 @@ const Room = lazy(()=>import("../page/estate/room") )
 const Car = lazy(()=>import("../page/estate/car"))
 const Repair=lazy(()=>import("../page/repair"))
 const Contract=lazy(()=>import("../page/finance/contract"))
-const Surrender=lazy(()=>import("../page/finance/surrender"))
+const ContractDetail=lazy(()=>import("../page/finance/contractDetail"))
 const Bill=lazy(()=>import("../page/finance/bill"));
 const Merchants=lazy(()=>import("../page/merchants"))
 const All=lazy(()=>import("../page/operation/all"))
@@ -27,7 +27,7 @@ export const componentMap:any={
     "/estate/car":<Car/>,
     "/repair":<Repair/>,
     "/finance/contract":<Contract/>,
-    "/finance/surrender":<Surrender/>,
+    "/finance/contract-detail":<ContractDetail/>,
     "/finance/bill":<Bill/>,
     "/merchants":<Merchants/>,
     "/operation/all":<All/>,

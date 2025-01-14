@@ -4,9 +4,11 @@ interface MenuI {
     icon: string;
     key: string;
     label: string;
+    hidden?: boolean;
     children?: MenuI[];
 
 }
+                        
 function GenerateRoute(menu: MenuI[]): RouteObject[]{
     return menu.map(item => {
         const hasChildren = item.children && item.children.length > 0;

@@ -14,7 +14,6 @@ function App() {
   const [router, setRouter] = useState<any>(null);
   const { token } = useSelector((state: any) => state.authSlice);
   useEffect(() => {
-    console.log("token", token);
     createRouterFn();
   }, [token]);
   const createRouterFn = async () => {
@@ -27,7 +26,6 @@ function App() {
       if (_routes[0].children[0]) {
         _routes[0].children[0].index = true; // 默认子路由
       }
-      console.log("routes", _routes);
       setRouter(createBrowserRouter(_routes));
     } else {
       setRouter(createBrowserRouter(routes));

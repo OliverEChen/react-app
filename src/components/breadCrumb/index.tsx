@@ -36,7 +36,6 @@ function CatBreadCrumb() {
       title: item,
     };
   });
-  console.log(list);
   return (
     <>
       <Breadcrumb items={items} />
